@@ -21,11 +21,17 @@ body{
   background-color: #F4F5F0;
 }
 
-h1,
+
 h2,
 h3,
 h4{
   font-family: 'Montserrat';
+}
+
+h1{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 // HOME //
@@ -57,15 +63,33 @@ h4{
   
 }
 
+
+
 #servicio{
-  height: 20%;
+  height: 43rem;
+  overflow: hidden;
+}
+
+.servicio-boton{
+  background-color: #000;
+  border-radius: 0.5rem;
+  width: 1rem;
+  padding: 0.3rem 0.4rem;
+}
+
+.carousel-caption{
+  position: absolute;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
 }
 
 .grilla{
-  height: 20% !important;
+  height:auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 10%);
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 12%);
   grid-template-areas: 
   'lge med med'
   'lge med med'
@@ -73,13 +97,34 @@ h4{
   'lge sml tiny2';
 }
 
+.grilla h4{
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.grilla p{
+  color: #000;
+  font-size: 3rem;
+  margin: 0 2rem;
+  font-weight: 900;
+}
+
 @mixin imagenes{
-  object-fit: contain;
+  object-fit:fill;
+  width: 100%;
+}
+
+@mixin flex-pos-b{
+  overflow: hidden;
+  border: solid 0.5px;
+  display: flex;
+  align-items: center;
 }
 
 #mampara{
   grid-area: lge;
-  overflow: hidden;
+  @include flex-pos-b;
   img{
   @include imagenes;
   }
@@ -87,8 +132,7 @@ h4{
 
 #barandas{
   grid-area: med;
-  overflow: hidden;
-
+  @include flex-pos-b;
   img{
     @include imagenes;
     }
@@ -96,8 +140,7 @@ h4{
 
 #espejos{
   grid-area: sml;
-  overflow: hidden;
-
+  @include flex-pos-b;
   img{
     @include imagenes;
     }
@@ -105,8 +148,7 @@ h4{
 
 #vinilos{
   grid-area: tiny1;
-  overflow: hidden;
-
+  @include flex-pos-b;
   img{
     @include imagenes;
     }
@@ -114,8 +156,7 @@ h4{
 
 #ducha{
   grid-area: tiny2;
-  overflow: hidden;
-
+  @include flex-pos-b;
   img{
     @include imagenes;
     }
@@ -130,4 +171,77 @@ h4{
 
 
 
+#category-todo{
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.category{
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+.cotiza{
+  font-weight:900;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+footer{
+  li{
+  font-size: 1.2rem;
+  }
+  h3{
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+}
+
+@media (max-width:768px){
+
+  #inicio .inicio-p1{
+    height: auto !important;
+  }
+
+  .bg-inicio{
+    background-image: url(../../assets/img/bg-inicio.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size:100%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+  }
+
+  #servicio{
+    height: 80rem;
+  }
+
+  #recomendaciones .card{
+    border: 1px solid #000 !important;
+  }
+
+  .grilla{
+    display: grid;
+    grid-template-rows: repeat(5, 7%);
+    grid-template-areas: 
+    'lge'
+    'med'
+    'sml'
+    'tiny1'
+    'tiny2';
+  }
+
+  .border-ca{
+    border-right: 0px !important;
+    border-left: 0px !important;
+    border-top:0px !important;
+    border-bottom: 1px solid !important;
+  }
+}
+
+@media (max-width:576px){
+  #servicio{
+    height: 66rem;
+  }
+}
 //  //
