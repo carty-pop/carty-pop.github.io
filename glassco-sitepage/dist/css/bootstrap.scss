@@ -1,0 +1,17 @@
+// Mapa de colores personalizado
+@import "../scss/functions";
+@import "../scss/variables";
+
+
+$custom-colors: (
+  "fondo": #F4F5F0,
+  "gris-pr": #A1A1A1,
+  "gris-sc": #D9D9D9,
+);
+
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../scss/bootstrap.scss";
+
+// Codigo Custom Adicional

@@ -182,7 +182,7 @@
     margin-bottom: var(--#{$prefix}card-group-margin);
   }
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     display: flex;
     flex-flow: row wrap;
     // The child selector allows nested `.card` within `.card-group`
